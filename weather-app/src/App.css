@@ -3,11 +3,19 @@
   padding: 0;
 }
 
+/* main app form */
+
 .Main {
   background-color: #d8d8d8;
   height: 100vh;
   padding: 24px;
 }
+
+.CardList {
+  display: flex;
+}
+
+/* input */
 
 .InputWrap {
   display: flex;
