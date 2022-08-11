@@ -5,14 +5,14 @@ import Card from './weathercard/wecard';
 
 function App() {
   console.log("App load");
-  const citiesList = ["nsk", "msk", "jdanovo"];
+  const citiesList = ["nsk", "msk", "jdanovo", "tarkov"];
   return (
     <div className="Main">
       <Input />
       <div className='CardList'>
         {
           citiesList.map(city => {
-            <Card city={city}/>
+            return <Card city={city}/>;
           })
         }
       </div>
