@@ -21,6 +21,7 @@
   display: flex;
   height: 50px;
   border-radius: 12px;
+  margin-bottom: 24px;
   box-shadow: 3px 3px 12px 1px rgba(0, 0, 0, 0.25);
 }
 
@@ -41,4 +42,65 @@
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
   border: none;
+}
+
+/* wecard */
+
+.WeCard {
+  width: 200px;
+  height: fit-content;
+  padding: 12px;
+  border-radius: 12px;
+  background-color: #3a8ac0;
+  font-size: 14px;
+  color: #fff;
+  margin-left: 24px;
+  box-shadow: 3px 3px 12px 1px rgba(0, 0, 0, 0.25);
+  transition: .3s;
+}
+
+.WeCard:hover {
+  transform: translate(0,10px);
+}
+
+.WeCard:first-child {
+  margin-left: 0;
+}
+
+.MainInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Icon {
+
+}
+
+.Title {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.Discription {
+  margin: 4px;
+  font-size: 16px;
+}
+
+.Timperature {
+  margin-top: 12px;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.Timperature::after {
+  content: "°";
+}
+
+.Information {
+  margin-top: 12px;
+}
+
+.Information > div {
+  margin: 4px;
 }
