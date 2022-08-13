@@ -12,7 +12,7 @@ function App() {
       <div className='CardList'>
         {
           citiesList.map(city => {
-            return <Card city={city}/>;
+            return <Card key={city} city={city}/>;
           })
         }
       </div>
