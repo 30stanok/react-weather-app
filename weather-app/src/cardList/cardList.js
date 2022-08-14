@@ -1,20 +1,14 @@
-import React, {useEffect} from "react";
+import React from "react";
 
 import '../App.css';
 
 import Card from "../weathercard/wecard";
 
-const CardList = ({city}) => {
-    useEffect(() => {
-        console.log('citiesLIst', city);
-        return () => {
-            console.log('unmount');
-        }
-    }, []);
+const CardList = ({ citiesList }) => {
     return (
         <div className='CardList'>
         {
-            city.map(city => <Card key={city} city={city}/>)
+            citiesList.map(city => <Card key={city} city={city} />)
         }
         </div>
     )

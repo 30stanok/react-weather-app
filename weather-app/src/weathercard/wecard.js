@@ -1,7 +1,12 @@
+import React, {useEffect, useState} from 'react';
+
 import '../App.css'
 
 function Card(props) {
-    console.log(props);
+    const [data, setdata] = useState();
+    useEffect(() => {
+
+    }, [])
     return (
         <div className='WeCard'>
             <div className='MainInfo'>

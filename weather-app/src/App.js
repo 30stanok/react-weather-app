@@ -7,11 +7,11 @@ import CardList from './cardList/cardList.js'
 
 function App() {
   console.log("App load");
-  const [city, setCity] = useState([]);
+  const [citiesList, setCitiesList] = useState([]);
   return (
     <div className="Main">
-      <Input setCity={setCity} />
-        <CardList city={city}/>
+      <Input setCitiesList={setCitiesList} />
+      <CardList citiesList={citiesList} />
     </div>
   );
 }

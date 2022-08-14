@@ -3,7 +3,7 @@ import React, {useState, useRef} from 'react';
 import '../App.css';
 
 
-function Input({setCity}) {
+function Input({setCitiesList}) {
     const [inputvalue, setInputValue] = useState();
     const inpRef = useRef(null);
 
@@ -13,7 +13,7 @@ function Input({setCity}) {
     }
 
     const handleOnClick = (e) => {
-        setCity((currentArray) => [...currentArray, inputvalue]);
+        setCitiesList((currentArray) => [...currentArray, inputvalue]);
         inpRef.current.focus();
         setInputValue('');
     }
