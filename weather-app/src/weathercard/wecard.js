@@ -5,8 +5,8 @@ import '../App.css'
 function Card(props) {
     const [data, setdata] = useState();
     useEffect(() => {
-
-    }, [])
+        
+    }, [date])
     return (
         <div className='WeCard'>
             <div className='MainInfo'>
@@ -20,7 +20,7 @@ function Card(props) {
                 <div>Feels like: 19</div>
             </div>
         </div>
-    );
+    ); 
 }
 
 export default Card;
