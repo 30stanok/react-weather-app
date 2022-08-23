@@ -6,7 +6,7 @@ function Card(props) {
     const [data, setdata] = useState();
     useEffect(() => {
         
-    }, [date])
+    }, [data])
     return (
         <div className='WeCard'>
             <div className='MainInfo'>
