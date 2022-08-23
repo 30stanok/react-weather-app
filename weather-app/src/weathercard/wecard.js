@@ -1,17 +1,23 @@
 import React, {useEffect, useState} from 'react';
 
+import { API_KEY } from "../settings";
 import '../App.css'
 
-function Card(props) {
-    const [data, setdata] = useState();
+function Card({ city }) {
+    const [data, setdata] = useState(null);
     useEffect(() => {
-        
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`)
+        .then((data) => {
+            console.log(data.name)
+        })
+        console.log(`render done`)
     }, [data])
+    console.log(`wecard render`)
     return (
         <div className='WeCard'>
             <div className='MainInfo'>
                 <img className='Icon' src='http://openweathermap.org/img/wn/10d@2x.png' alt='Icon'></img>
-                <div className='Title'>{props.city}</div>
+                <div className='Title'>{city}</div>
                 <div className='Discription'>Cloudy</div>
                 <div className='Timperature'>20</div>
             </div>
