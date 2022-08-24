@@ -8,7 +8,7 @@ function Card({ city }) {
     useEffect(() => {
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`)
         .then((data) => {
-            console.log(data.name)
+            console.log(data)
         })
         console.log(`render done`)
     }, [data])
