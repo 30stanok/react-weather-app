@@ -6,24 +6,28 @@ import '../App.css'
 function Card({ city }) {
     const [data, setdata] = useState(null);
     useEffect(() => {
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`)
-        .then((data) => {
-            console.log(data)
-        })
-        console.log(`render done`)
-    }, [data])
-    console.log(`wecard render`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`)
+        .then(res => res.json())
+        .then(json => setdata(json))
+        console.log(`render done`);
+    }, [])
+    if (!data) return null;
+    console.log(data)
+    const { name, weather, main, cod } = data;
+    console.log(cod);
+    const { description, icon } = weather[0];
+    const { temp, humidity, feels_like } = main;
     return (
         <div className='WeCard'>
             <div className='MainInfo'>
-                <img className='Icon' src='http://openweathermap.org/img/wn/10d@2x.png' alt='Icon'></img>
-                <div className='Title'>{city}</div>
-                <div className='Discription'>Cloudy</div>
-                <div className='Timperature'>20</div>
+                <img className='Icon' src={`http://openweathermap.org/img/wn/${icon}@2x.png`} alt='Icon'></img>
+                <div className='Title'>{name}</div>
+                <div className='Discription'>{description}</div>
+                <div className='Timperature'>{temp.toFixed()}</div>
             </div>
             <div className='Information'>
-                <div>Humidity: 15</div>
-                <div>Feels like: 19</div>
+                <div>Humidity: {humidity}</div>
+                <div>Feels like: {feels_like}</div>
             </div>
         </div>
     ); 

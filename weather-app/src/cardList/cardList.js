@@ -5,6 +5,8 @@ import '../App.css';
 import Card from "../weathercard/wecard";
 
 const CardList = ({ citiesList }) => {
+    console.log(`render processing`)
+    console.log(citiesList)
     return (
         <div className='CardList'>
         {
